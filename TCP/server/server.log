@@ -1,0 +1,7 @@
+2024-12-08 21:38:57,525 - INFO - Accepted connection from ('127.0.0.1', 55682)
+2024-12-08 21:38:57,727 - INFO - Received request for File7.zip from ('127.0.0.1', 55682)
+2024-12-08 21:39:12,487 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 55682), name File7.zip successfully
+2024-12-08 21:39:12,506 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 55682), name File7.zip successfully
+2024-12-08 21:39:12,527 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 55682), name File7.zip successfully
+2024-12-08 21:39:12,538 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 55682), name File7.zip successfully
+2024-12-08 21:39:12,538 - INFO - Sending File7.zip to ('127.0.0.1', 55682) successfully

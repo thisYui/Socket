@@ -1,0 +1,27 @@
+2024-12-08 21:38:57,523 - INFO - Connected to server at 127.0.0.1:50000
+2024-12-08 21:38:57,526 - INFO - Scan files: ['File7.zip']
+2024-12-08 21:38:57,526 - INFO - Files : ['File7.zip']
+2024-12-08 21:38:57,727 - INFO - Sent request for File7.zip from 127.0.0.1:50000
+2024-12-08 21:38:57,729 - INFO - Received data size: 536870912
+2024-12-08 21:39:02,556 - INFO - Scan files: ['File7.zip']
+2024-12-08 21:39:02,556 - INFO - Files : ['File7.zip']
+2024-12-08 21:39:07,574 - INFO - Scan files: ['File7.zip']
+2024-12-08 21:39:07,574 - INFO - Files : ['File7.zip']
+2024-12-08 21:39:12,575 - INFO - Thread 1 successfully received all chunks in File7.zip.
+2024-12-08 21:39:12,575 - INFO - Scan files: ['File7.zip']
+2024-12-08 21:39:12,575 - INFO - Files : ['File7.zip']
+2024-12-08 21:39:12,576 - INFO - Thread 2 successfully received all chunks in File7.zip.
+2024-12-08 21:39:12,576 - INFO - Thread 3 successfully received all chunks in File7.zip.
+2024-12-08 21:39:12,576 - INFO - Thread 4 successfully received all chunks in File7.zip.
+2024-12-08 21:39:13,778 - INFO - Đã xóa file 1.bin.
+2024-12-08 21:39:13,798 - INFO - Đã xóa file 2.bin.
+2024-12-08 21:39:13,812 - INFO - Đã xóa file 3.bin.
+2024-12-08 21:39:13,829 - INFO - Đã xóa file 4.bin.
+2024-12-08 21:39:13,829 - INFO - Đã gộp file vào File7.zip thành công.
+2024-12-08 21:39:13,829 - INFO - {'thread_1': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_2': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_3': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_4': {'count_chunk': 256, 'total': 256, 'successfully': True}}
+2024-12-08 21:39:17,668 - INFO - Scan files: ['File7.zip']
+2024-12-08 21:39:17,683 - INFO - Files : []
+2024-12-08 21:39:22,765 - INFO - Scan files: ['File7.zip']
+2024-12-08 21:39:22,765 - INFO - Files : []
+2024-12-08 21:39:27,871 - INFO - Scan files: ['File7.zip']
+2024-12-08 21:39:27,871 - INFO - Files : []

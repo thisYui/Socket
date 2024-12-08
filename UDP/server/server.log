@@ -1,0 +1,12 @@
+2024-12-06 01:23:22,263 - DEBUG - Thread 1: Connection from 127.0.0.1:65216.
+2024-12-06 01:23:22,264 - DEBUG - Thread 2: Connection from 127.0.0.1:65217.
+2024-12-06 01:23:22,264 - DEBUG - Thread 3: Connection from 127.0.0.1:65218.
+2024-12-06 01:23:22,264 - DEBUG - Thread 4: Connection from 127.0.0.1:65219.
+2024-12-06 01:23:22,265 - DEBUG - Thread 5: Connection from 127.0.0.1:65220.
+2024-12-06 01:23:22,265 - DEBUG - Thread 6: Connection from 127.0.0.1:65221.
+2024-12-06 01:23:22,266 - DEBUG - Thread 7: Connection from 127.0.0.1:65222.
+2024-12-06 01:23:22,266 - DEBUG - Thread 8: Connection from 127.0.0.1:65223.
+2024-12-06 01:23:26,839 - WARNING - Connection from :0 closed.
+2024-12-06 01:23:26,839 - WARNING - Rebinding server.
+2024-12-06 01:23:49,372 - ERROR - Server can be closed.
+2024-12-06 01:23:49,372 - CRITICAL - Server closed.
