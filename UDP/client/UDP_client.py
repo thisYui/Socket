@@ -20,12 +20,11 @@ def get_data_from_chunk(data: bytes) -> bytes:
 
 
 class ReceiveThread(threading.Thread):
-    def __init__(self, server_host: str, server_port: int, thread_id: int, total: int):
+    def __init__(self, server_host: str, server_port: int, thread_id: int):
         super().__init__()
         self.server_host = server_host  # Địa chỉ IP của server tương ứng
         self.server_port = server_port  # Cổng của server tương ứng
         self.thread_id = thread_id  # ID của thread
-        self.total = total  # Tổng số packet cần nhận
         self.time_out = 1  # Thời gian chờ: 1s
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.size_packet = PACKET_SIZE  # Kích thước mỗi packet
@@ -88,7 +87,6 @@ class Client:
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # Tạo socket UDP
         self.file_input = file_input  # File chứa danh sách các file cần tải
         self.file_current = ""  # Tên file đang nhận
-        self.data_size_file_current = 0  # Kích thước dữ liệu của file đang nhận
         self.files = []  # Danh sách file cần lưu
         self.files_downloaded = []  # Danh sách file đã tải
 
@@ -209,8 +207,8 @@ class Client:
             self.client_socket.sendto(self.file_current.encode('utf-8'), (self.server_host, self.server_port))
 
             data, _ = self.client_socket.recvfrom(1024)  # Nhận kích thước dữ liệu của file
-            self.data_size_file_current = int(data.decode())  # Chuyển dữ liệu từ bytes sang int
-            logging.info(f"Data size: {self.data_size_file_current}")  # In kích thước dữ liệu
+            data_size_file_current = int(data.decode())  # Chuyển dữ liệu từ bytes sang int
+            logging.info(f"Data size: {data_size_file_current}")  # In kích thước dữ liệu
 
             '''
             Các port của các thread bên phía server cách đều nhau 1 đơn vị
@@ -218,8 +216,7 @@ class Client:
             '''
             threads = []
             for i in range(NUM_THREADS):
-                thread = ReceiveThread(self.server_host, self.server_port + 1 + i, i + 1,
-                                       (self.data_size_file_current / NUM_THREADS) / CHUNK_SIZE)
+                thread = ReceiveThread(self.server_host, self.server_port + 1 + i, i + 1)
                 threads.append(thread)
                 thread.start()
 

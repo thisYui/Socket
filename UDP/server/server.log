@@ -1,12 +1,20 @@
-2024-12-06 01:23:22,263 - DEBUG - Thread 1: Connection from 127.0.0.1:65216.
-2024-12-06 01:23:22,264 - DEBUG - Thread 2: Connection from 127.0.0.1:65217.
-2024-12-06 01:23:22,264 - DEBUG - Thread 3: Connection from 127.0.0.1:65218.
-2024-12-06 01:23:22,264 - DEBUG - Thread 4: Connection from 127.0.0.1:65219.
-2024-12-06 01:23:22,265 - DEBUG - Thread 5: Connection from 127.0.0.1:65220.
-2024-12-06 01:23:22,265 - DEBUG - Thread 6: Connection from 127.0.0.1:65221.
-2024-12-06 01:23:22,266 - DEBUG - Thread 7: Connection from 127.0.0.1:65222.
-2024-12-06 01:23:22,266 - DEBUG - Thread 8: Connection from 127.0.0.1:65223.
-2024-12-06 01:23:26,839 - WARNING - Connection from :0 closed.
-2024-12-06 01:23:26,839 - WARNING - Rebinding server.
-2024-12-06 01:23:49,372 - ERROR - Server can be closed.
-2024-12-06 01:23:49,372 - CRITICAL - Server closed.
+2024-12-09 00:17:12,930 - DEBUG - Thread 1: Connection from 127.0.0.1:59051.
+2024-12-09 00:17:12,931 - DEBUG - Thread 2: Connection from 127.0.0.1:59052.
+2024-12-09 00:17:12,931 - DEBUG - Thread 3: Connection from 127.0.0.1:59053.
+2024-12-09 00:17:12,932 - DEBUG - Thread 5: Connection from 127.0.0.1:59055.
+2024-12-09 00:17:12,933 - DEBUG - Thread 4: Connection from 127.0.0.1:59054.
+2024-12-09 00:17:12,933 - DEBUG - Thread 6: Connection from 127.0.0.1:59056.
+2024-12-09 00:17:12,934 - DEBUG - Thread 7: Connection from 127.0.0.1:59057.
+2024-12-09 00:17:12,934 - DEBUG - Thread 8: Connection from 127.0.0.1:59058.
+2024-12-09 00:17:15,414 - INFO - Thread 8: Timeout, resending Chunk: 125, 477954048, 3617033963, 65536
+2024-12-09 00:17:15,414 - INFO - Thread 4: Timeout, resending Chunk: 125, 209518592, 3617033963, 65536
+2024-12-09 00:17:15,414 - INFO - Thread 3: Timeout, resending Chunk: 124, 142344192, 3617033963, 65536
+2024-12-09 00:17:15,414 - INFO - Thread 1: Timeout, resending Chunk: 126, 8257536, 3617033963, 65536
+2024-12-09 00:17:15,429 - INFO - Thread 8: Invalid ACK or checksum, resending chunk 125.
+2024-12-09 00:17:15,429 - INFO - Thread 3: Invalid ACK or checksum, resending chunk 124.
+2024-12-09 00:17:15,430 - INFO - Thread 1: Invalid ACK or checksum, resending chunk 126.
+2024-12-09 00:17:15,431 - INFO - Thread 4: Invalid ACK or checksum, resending chunk 125.
+2024-12-09 00:17:36,565 - WARNING - Connection from :0 closed.
+2024-12-09 00:17:36,566 - WARNING - Rebinding server.
+2024-12-09 00:17:56,769 - ERROR - Server can be closed.
+2024-12-09 00:17:56,769 - CRITICAL - Server closed.

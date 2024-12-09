@@ -18,29 +18,25 @@ logging.basicConfig(
 
 
 def get_payload_from_header(header: bytes) -> int:
-    return int.from_bytes(header[1:4], byteorder='big')
+    return int.from_bytes(header[2:4], byteorder='big')
 
 
 def get_length_name_file_from_header(header: bytes) -> int:
-    return int.from_bytes(header[12:16], byteorder='big')
-
-
-def write_file(file_name: str, data: bytes):
-    with open(file_name, 'ab') as file:
-        file.write(data)
+    return int.from_bytes(header[1:2], byteorder='big')
 
 
 class MiniThread(threading.Thread):
-    def __init__(self, client_socket: socket.socket, _lock: Lock, _shared_data: dict):
+    def __init__(self, client_socket: socket.socket, _lock_receive: Lock, _lock_write: Lock, _shared_data: dict):
         super().__init__()
         self.client_socket = client_socket  # Socket kết nối với server
-        self._lock = _lock  # Lock để tránh xung đột giữa các thread
+        self._lock_receive = _lock_receive  # Lock nhận dữ liệu
+        self._lock_write = _lock_write  # Lock ghi dữ liệu
         self._shared_data = _shared_data  # Dữ liệu chia sẻ giữa các thread
         self.delay = 0.01  # Độ trễ
 
     def receive_chunk(self, header_size=20, buffer_size=1024) -> bytes:
         """Receive all data from the server in chunks using the walrus operator."""
-        with self._lock:
+        with self._lock_receive:
             try:
                 header = self.client_socket.recv(header_size)  # Nhận header
                 payload = get_payload_from_header(header)  # Lấy payload từ header
@@ -68,6 +64,11 @@ class MiniThread(threading.Thread):
         chunk.decompose(self.receive_chunk())  # Giải mã dữ liệu nhận được thành chunk
         return chunk
 
+    def write_file(self, file_name: str, data: bytes):
+        with self._lock_write:
+            with open(file_name, 'ab') as file:
+                file.write(data)
+
     def receive_successfully(self) -> bool:
         """ Kiểm tra tất cả thread đã nhận thành công tất cả các part chưa."""
         for i in range(NUM_THREADS):
@@ -76,7 +77,7 @@ class MiniThread(threading.Thread):
         return True
 
     def draw_download_part(self, file_name):
-        with self._lock:
+        with self._lock_receive:
             print(f"\033[{NUM_THREADS}F", end="")  # Di chuyển con trỏ lên số dòng bằng số part
             try:
                 for i in range(NUM_THREADS):
@@ -95,7 +96,7 @@ class MiniThread(threading.Thread):
             self._shared_data[f'thread_{num_id}']['total'] = total  # Cập nhật tổng số chunk vào dữ liệu chia sẻ
             self._shared_data[f'thread_{num_id}']['count_chunk'] += 1  # Cập nhật số lượng chunk đã nhận
 
-            write_file(f"{num_id}.bin", chunk.get_data)  # Ghi dữ liệu chunk vào file
+            self.write_file(f"{num_id}.bin", chunk.get_data)  # Ghi dữ liệu chunk vào file
             self.draw_download_part(chunk.get_file_name)  # Ghi ra các part đang download
             time.sleep(self.delay)
             if chunk.get_chunk_id == chunk.get_total:
@@ -119,7 +120,8 @@ class Client:
         self.is_live = True  # Trạng thái sống
         self.packet_size = 1024  # Kích thước gói tin
         self.delay = 0.2  # Độ trễ
-        self._lock = threading.Lock()  # Lock để tránh xung đột giữa các thread
+        self._lock_receive = threading.Lock()  # Lock nhận dữ liệu
+        self._lock_write = threading.Lock()  # Lock ghi dữ liệu
         self._shared_data = {}  # Dữ liệu chia sẻ giữa các thread
 
     def close(self):
@@ -182,10 +184,9 @@ class Client:
             return []
 
     def filter_files(self):
-        with self._lock:
-            for file in self.files_scan:
-                if file not in self.files['waiting'] and file not in self.files['downloaded']:
-                    self.files['waiting'].append(file)
+        for file in self.files_scan:
+            if file not in self.files['waiting'] and file not in self.files['downloaded']:
+                self.files['waiting'].append(file)
 
     def merge_files(self):
         """
@@ -287,7 +288,7 @@ class Client:
 
             threads = []
             for i in range(NUM_THREADS):
-                thread = MiniThread(self.client_socket, self._lock, self._shared_data)
+                thread = MiniThread(self.client_socket, self._lock_receive, self._lock_write, self._shared_data)
                 thread.start()
                 threads.append(thread)
 

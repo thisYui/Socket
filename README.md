@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # TCP
 Sever: đọc danh sách các file từ JSON ở trạng tahis listening
 Client: gửi yêu kết nối, khi serer chấp nhận kết nối server gửi data JSON cho client
@@ -11,15 +10,15 @@ Client download tuần tự từng file 1
 file truyền đa luồng
 server kết nối nhiều client
 
-+------------------------+----------+
-| Header                 | Data     | 
-| num_id : 1 bytes       |          |
-| chunk_id : 4 bytes     | data     |       
-| total : 4 bytes        |          |       
-| length_name : 1 bytes  |          |        
-| file_name : max 255    |          |       
-| offset : 4 bytes       |          |       
-+------------------------+----------+
++------------------------+-----------+
+| Header                 | Data      |
+| num_id : 1 bytes       | file_name |
+| length_name : 1 bytes  | data      |
+| payload : 2 bytes      |           |
+| chunk_id : 4 bytes     |           |
+| total : 4 bytes        |           |
+| offset : 4 bytes       |           |
++------------------------+-----------+
 
 cấu trúc chunk
 {
@@ -59,13 +58,13 @@ dùng os.path kiểm tra mở file thành công hay ko
 # UDP
 mỗi server chỉ phục vụ 1 client
 
-+------------------------+-----------------+-------+
-| Header                 | Data            |  END  |
-| Sequence : 4 bytes     | data            |       |
-| checksum : 2 bytes     |                 |       |
-| payload : 3 bytes      |                 |       |
-| offset : 4 bytes       |                 |       |
-+------------------------+-----------------+-------+
++------------------------+-----------+
+| Header                 |   Data    |
+| Sequence : 4 bytes     |   data    |
+| checksum : 4 bytes     |           |
+| payload : 4 bytes      |           |
+| offset : 4 bytes       |           |
++------------------------+-----------+
 
 cấu trúc chunk server
 {
@@ -76,12 +75,12 @@ cấu trúc chunk server
     "Data":                 512KB
 }
 
-+------------------------+-----------------+-------+
-| Header                 | Data            |  END  |
-| Acknowledge : 4 bytes  |                 |       |
-| checksum : 2 bytes     |                 |       |
-| Flags : 1 bytes        |                 |       |
-+------------------------+-----------------+-------+
++------------------------+
+| Header                 | 
+| ACK : 1 bytes          |
+| Acknowledge : 4 bytes  |
+| checksum : 4 bytes     |
++------------------------+
 
 data của client
 {
@@ -107,6 +106,117 @@ khi client nhận được data
 
 trong file được đọc sẽ có 4 con trỏ file đọc file theo 1 phân vị khác nhau
 dữ liệu sẽ được đọc và gửi tuần tự và liên tục không lưu trong bộ nhớ
-=======
-# Socket
->>>>>>> 4d4957f22bf2352b113dfc055e0ebd39b71bcf9e
+
+UDP/
+├────── client/
+│      ├── client.log
+│      ├── input.txt
+│      ├── modul.py
+│      └── UDP_client.py
+│
+└────── server/
+        ├── close_server.py
+        ├── data_name.JSON
+        ├── modul.py
+        ├── server.log
+        └── UDP_sever.py
+
+TCP/
+├─────── client/
+│       ├── client.log
+│       ├── input.txt
+│       ├── modul.py
+│       ├── add_request_to_input.py
+│       └── TCP_client.py
+│
+└──────── server/
+                ├── close_server.py
+                ├── data_name.JSON
+                ├── modul.py
+                ├── server.log
+                └── UDP_sever.py
+
+
+Project/
+├──────── TCP/
+├──────── UDP/
+├──────── random_data.py
+└──────── compare_file.py
+
+class server
+├────── __init__ ──────────────────── host & port server
+├────── func: close                ├─ client address
+├────── func: rebind               ├─ socket
+├────── func: disconect            ├─ JSON file
+├────── func: shutdown             ├─ request
+├────── func: get_request          ├─ file send
+├────── func: is_exist_file        └─ busy
+└────── func: run
+        └─ class SendThread
+             ├─── __init__ ───────────── server address
+             ├─── func: close         ├─ start ptr & last ptr
+             ├─── func: read_file     ├─ file_path  
+             ├─── func: send_data     ├─ socket
+             └─── func: run           ├─ Chunk & Respond
+                                      ├─ Seq Number
+                                      ├─ thread ID
+                                      ├─ client address
+                                      └─ timeout & time delay
+class client
+├────── __init__ ──────────────────── host & port server
+├────── func: close                ├─ file input
+├────── func: get_json_file        ├─ file current
+├────── func: get_infomation       ├─ files
+├────── func: read_file            └─ downloaded
+├────── func: merge_file
+├────── func: filter_files
+└────── func: run
+        └─ class ReceiveThread
+             ├─── __init__ ───────────── server address
+             ├─── func: close         ├─ thread ID
+             ├─── func: write_file    ├─ socket
+             └─── func: run           ├─ Respond
+                                      └─ timeout
+
+class client
+├────── __init__ ──────────────────── host & port server
+├────── func: close                ├─ file input
+├────── func: connect              ├─ file current
+├────── func: make_share_data      ├─ files scan
+├────── func: get_josn_file        ├─ downloaded & waiting
+├────── func: merge_file           ├─ time waiting
+├────── func: filter_files         ├─ JSON file
+├────── func: send_request         ├─ is live
+├────── func: scan_files           ├─ time delay
+├────── func: _thread_scan_file_   ├─ lock thread
+├────── func: check_size_file      └─ share data
+├────── func: reset
+└────── func: run
+        └─ class MiniThread
+             ├─── __init__ ─────────────────── client socket
+             ├─── func: receive_chunk       ├─ lock reveive
+             ├─── func: write_file          ├─ lock write
+             ├─── func: make_chunk          ├─ share data
+             ├─── func: receice_success     └─ time delay
+             ├─── func: draw_download_part
+             └─── func: run
+
+class server
+├────── __init__ ──────────────────── host & port server
+├────── func: close                ├─ socket
+├────── func: handle_client        ├─ JSON file
+└────── func: run                  └─ share
+        └─ class Connection
+             ├─── __init__ ──────────────────── socket
+             ├─── func: close                ├─ client address
+             ├─── func: send_json_file       ├─ JSON file  
+             ├─── func: is_exist_file        ├─ request
+             ├─── func: get_request          ├─ file send
+             ├─── func: send_data_size       ├─ offset
+             └─── func: run                  ├─ lock thread
+                        └─ class MiniThread  └─ share
+                             ├─── __init__ ───────────── socket
+                             ├─── func: read_file     ├─ ptr star & last
+                             ├─── func: send_chunk    ├─ info of Chunk  
+                             └─── func: run           ├─ lock thread
+                                                      └─ time delay

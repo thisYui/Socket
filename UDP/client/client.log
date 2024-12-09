@@ -1,20 +1,17 @@
-2024-12-06 01:23:22,262 - INFO - Data size: 20971520
-2024-12-06 01:23:22,684 - WARNING - Thread 2 closed.
-2024-12-06 01:23:22,684 - INFO - Thread 2: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,696 - WARNING - Thread 1 closed.
-2024-12-06 01:23:22,696 - WARNING - Thread 6 closed.
-2024-12-06 01:23:22,698 - INFO - Thread 1: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,698 - WARNING - Thread 8 closed.
-2024-12-06 01:23:22,698 - WARNING - Thread 3 closed.
-2024-12-06 01:23:22,698 - WARNING - Thread 5 closed.
-2024-12-06 01:23:22,698 - INFO - Thread 6: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,699 - INFO - Thread 3: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,699 - INFO - Thread 8: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,699 - INFO - Thread 5: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,700 - WARNING - Thread 4 closed.
-2024-12-06 01:23:22,700 - INFO - Thread 4: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,700 - WARNING - Thread 7 closed.
-2024-12-06 01:23:22,700 - INFO - Thread 7: 100.00%. Data size: 2621440.
-2024-12-06 01:23:22,700 - INFO - Merging files...
-2024-12-06 01:23:22,722 - INFO - Đã gộp file vào File3.zip thành công.
-2024-12-06 01:23:26,839 - WARNING - Client closed.
+2024-12-09 00:17:12,927 - INFO - Data size: 536870912
+2024-12-09 00:17:15,414 - WARNING - Thread 8: Timeout. Respond: True, 124, 3617033963. Resending ACK.
+2024-12-09 00:17:15,428 - WARNING - Thread 8: Respond: False, 125, 3617033963.
+2024-12-09 00:17:15,429 - WARNING - Thread 3: Respond: False, 124, 3617033963.
+2024-12-09 00:17:15,429 - WARNING - Thread 1: Respond: False, 126, 3617033963.
+2024-12-09 00:17:15,431 - WARNING - Thread 4: Respond: False, 125, 3617033963.
+2024-12-09 00:17:30,644 - WARNING - Thread 6 closed.
+2024-12-09 00:17:30,810 - WARNING - Thread 7 closed.
+2024-12-09 00:17:31,304 - WARNING - Thread 2 closed.
+2024-12-09 00:17:31,413 - WARNING - Thread 5 closed.
+2024-12-09 00:17:32,117 - WARNING - Thread 8 closed.
+2024-12-09 00:17:32,296 - WARNING - Thread 1 closed.
+2024-12-09 00:17:32,310 - WARNING - Thread 4 closed.
+2024-12-09 00:17:32,310 - WARNING - Thread 3 closed.
+2024-12-09 00:17:32,310 - INFO - Merging files...
+2024-12-09 00:17:33,463 - INFO - Đã gộp file vào File7.zip thành công.
+2024-12-09 00:17:36,565 - WARNING - Client closed.

@@ -37,7 +37,7 @@ def compare_files(file1, file2):
         return False
 
 
-type_protocol = "TCP"
+type_protocol = "UDP"
 lst_files = read_file(f"{type_protocol}/client/input.txt")
 for i in lst_files:
     print(f"File name: {i}")

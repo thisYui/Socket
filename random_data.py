@@ -98,8 +98,8 @@ print("List file:")
 for file, size in zip(name_list, size_list):
     print(f"File: {file}, Size: {size} MB")
 
-type_protocol = "TCP"
-"""
+type_protocol = "UDP"
+
 print("\nMake file zip:")
 for file, size in zip(name_list, size_list):
     link_directory = f"{type_protocol}/server/{file}"
@@ -109,3 +109,4 @@ print("Check size file:")
 for file in name_list:
     link_directory = f"{type_protocol}/client/{file}"
     print(f"File: {file}: {os.path.getsize(link_directory)/(1024*1024)}MB")
+"""
