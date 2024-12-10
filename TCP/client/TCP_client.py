@@ -5,7 +5,7 @@ import time
 import os
 from threading import Lock
 import logging
-from modul import SERVER_HOST, SERVER_PORT, Chunk, NUM_THREADS
+from modul import SERVER_HOST, SERVER_PORT, Chunk, NUM_THREADS, HEADER_SIZE
 
 # Cấu hình logger cho client
 logging.basicConfig(
@@ -17,24 +17,24 @@ logging.basicConfig(
 )
 
 
-def get_payload_from_header(header: bytes) -> int:
-    return int.from_bytes(header[2:4], byteorder='big')
-
-
 def get_length_name_file_from_header(header: bytes) -> int:
     return int.from_bytes(header[1:2], byteorder='big')
+
+
+def get_payload_from_header(header: bytes) -> int:
+    return int.from_bytes(header[2:6], byteorder='big')
 
 
 class MiniThread(threading.Thread):
     def __init__(self, client_socket: socket.socket, _lock_receive: Lock, _lock_write: Lock, _shared_data: dict):
         super().__init__()
         self.client_socket = client_socket  # Socket kết nối với server
-        self._lock_receive = _lock_receive  # Lock nhận dữ liệu
-        self._lock_write = _lock_write  # Lock ghi dữ liệu
+        self._lock_receive = _lock_receive  # Lock để tránh xung đột giữa các thread
+        self._lock_write = _lock_write  # Lock để tránh xung đột giữa các thread
         self._shared_data = _shared_data  # Dữ liệu chia sẻ giữa các thread
-        self.delay = 0.01  # Độ trễ
+        self.delay = 0.005  # Độ trễ
 
-    def receive_chunk(self, header_size=20, buffer_size=1024) -> bytes:
+    def receive_chunk(self, header_size=HEADER_SIZE, buffer_size=1024) -> bytes:
         """Receive all data from the server in chunks using the walrus operator."""
         with self._lock_receive:
             try:
@@ -59,15 +59,15 @@ class MiniThread(threading.Thread):
                 logging.error(f"Unexpected error: {e}")
                 return b''
 
-    def make_chunk(self) -> Chunk:
-        chunk = Chunk(0, 0, 0, 0, '', 0, b'')
-        chunk.decompose(self.receive_chunk())  # Giải mã dữ liệu nhận được thành chunk
-        return chunk
-
     def write_file(self, file_name: str, data: bytes):
         with self._lock_write:
             with open(file_name, 'ab') as file:
                 file.write(data)
+
+    def make_chunk(self) -> Chunk:
+        chunk = Chunk(0, 0, 0, 0, '', 0, b'')
+        chunk.decompose(self.receive_chunk())  # Giải mã dữ liệu nhận được thành chunk
+        return chunk
 
     def receive_successfully(self) -> bool:
         """ Kiểm tra tất cả thread đã nhận thành công tất cả các part chưa."""
@@ -84,6 +84,7 @@ class MiniThread(threading.Thread):
                     progress = ((self._shared_data[f'thread_{i + 1}']['count_chunk'])
                                 / (self._shared_data[f'thread_{i + 1}']['total']))
                     print(f"Downloading {file_name} part {i + 1} .... {int(progress * 100)}%")
+                time.sleep(self.delay)
             except ZeroDivisionError:
                 logging.error("ZeroDivisionError: division by zero")
 
@@ -98,7 +99,6 @@ class MiniThread(threading.Thread):
 
             self.write_file(f"{num_id}.bin", chunk.get_data)  # Ghi dữ liệu chunk vào file
             self.draw_download_part(chunk.get_file_name)  # Ghi ra các part đang download
-            time.sleep(self.delay)
             if chunk.get_chunk_id == chunk.get_total:
                 self._shared_data[f'thread_{num_id}']["successfully"] = True
                 logging.info(f"Thread {num_id} successfully received all chunks in {chunk.get_file_name}.")
@@ -120,8 +120,8 @@ class Client:
         self.is_live = True  # Trạng thái sống
         self.packet_size = 1024  # Kích thước gói tin
         self.delay = 0.2  # Độ trễ
-        self._lock_receive = threading.Lock()  # Lock nhận dữ liệu
-        self._lock_write = threading.Lock()  # Lock ghi dữ liệu
+        self._lock_receive = threading.Lock()  # Lock để tránh xung đột giữa các thread
+        self._lock_write = threading.Lock()  # Lock để tránh xung đột giữa các thread
         self._shared_data = {}  # Dữ liệu chia sẻ giữa các thread
 
     def close(self):

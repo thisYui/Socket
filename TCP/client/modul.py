@@ -4,6 +4,7 @@ SERVER_PORT = 50000
 NUM_THREADS = 4  # Number of threads to use for downloading
 CHUNK_SIZE = 512 * 1024  # 512KB chunks
 MAX_CLIENTS = 5  # Maximum number of clients to serve
+HEADER_SIZE = 18  # Header size in bytes
 
 
 class Chunk:
@@ -53,20 +54,20 @@ class Chunk:
     def to_bytes(self) -> bytes:
         """
         Convert chunk to bytes for sending over network
-        num_id | length | payload | id | total | offset | name |  data
-        1B     | 1B     | 2B       |4B | 4B    | 4B    | xB    |  xB
+        num_id | payload | id | total | length | offset | name |  data
+        1B     | 3B       |4B | 4B    | 4B     | 4B    | xB    |  xB
         """
         return self.header_to_bytes() + self.data_to_bytes()
 
     def header_to_bytes(self) -> bytes:
         """
         Convert chunk to bytes for sending over network
-        num_id | length | payload | id | total | offset | name |  data
-        1B     | 1B     | 2B       |4B | 4B    | 4B    | xB    |  xB
+        num_id | payload | id | total | length | offset | name |  data
+        1B     | 3B       |4B | 4B    | 4B     | 4B    | xB    |  xB
         """
         header = (self.num_id.to_bytes(1, byteorder='big') +
                   self.length_name.to_bytes(1, byteorder='big') +
-                  self.payload.to_bytes(2, byteorder='big') +
+                  self.payload.to_bytes(4, byteorder='big') +
                   self.chunk_id.to_bytes(4, byteorder='big') +
                   self.total_chunks.to_bytes(4, byteorder='big') +
                   self.offset.to_bytes(4, byteorder='big'))
@@ -80,10 +81,10 @@ class Chunk:
         """Extract chunk data from bytes"""
         self.num_id = int.from_bytes(data[0:1], byteorder='big')
         self.length_name = int.from_bytes(data[1:2], byteorder='big')
-        self.payload = int.from_bytes(data[2:4], byteorder='big')
-        self.chunk_id = int.from_bytes(data[4:8], byteorder='big')
-        self.total_chunks = int.from_bytes(data[8:12], byteorder='big')
-        self.offset = int.from_bytes(data[12:16], byteorder='big')
-        self.file_name = data[16:16 + self.length_name].decode()
-        self.data = data[16 + self.length_name:]
+        self.payload = int.from_bytes(data[2:6], byteorder='big')
+        self.chunk_id = int.from_bytes(data[6:10], byteorder='big')
+        self.total_chunks = int.from_bytes(data[10:14], byteorder='big')
+        self.offset = int.from_bytes(data[14:18], byteorder='big')
+        self.file_name = data[18:18 + self.length_name].decode()
+        self.data = data[18 + self.length_name:]
         return self

@@ -13,6 +13,6 @@ def append_to_file(file_path: str, content: str):
         print(f"Lỗi khi thêm dữ liệu vào file: {e}")
 
 
-lst_file = ['File5.zip', 'File6.zip', 'File7.zip', 'File8.zip']
+lst_file = ['File5.zip', 'File6.zip', 'File7.zip']
 for file in lst_file:
     append_to_file("input.txt", file)
