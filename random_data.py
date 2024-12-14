@@ -52,7 +52,7 @@ def extract_names_and_sizes(json_file):
     Đọc file JSON và trích xuất danh sách tên file và kích thước.
 
     Args:
-        json_file_path (str): Đường dẫn tới file JSON.
+        json_file (str): Đường dẫn tới file JSON.
 
     Returns:
         tuple: (name_list, size_list)
@@ -90,15 +90,11 @@ def convert_to_mb(size_list):
     return result
 
 
-json_file_path = "TCP/server/data_name.JSON"  # Đường dẫn tới file JSON
+''' Chọn loại giao thức '''
+type_protocol = "UDP"
+json_file_path = f"{type_protocol}/server/data_name.JSON"  # Đường dẫn tới file JSON
 name_list, size_list = extract_names_and_sizes(json_file_path)
 size_list = convert_to_mb(size_list)  # Chuyển kích thước sang MB
-
-print("List file:")
-for file, size in zip(name_list, size_list):
-    print(f"File: {file}, Size: {size} MB")
-
-type_protocol = "UDP"
 
 print("\nMake file zip:")
 for file, size in zip(name_list, size_list):

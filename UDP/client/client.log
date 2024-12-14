@@ -1,17 +1,78 @@
-2024-12-09 00:17:12,927 - INFO - Data size: 536870912
-2024-12-09 00:17:15,414 - WARNING - Thread 8: Timeout. Respond: True, 124, 3617033963. Resending ACK.
-2024-12-09 00:17:15,428 - WARNING - Thread 8: Respond: False, 125, 3617033963.
-2024-12-09 00:17:15,429 - WARNING - Thread 3: Respond: False, 124, 3617033963.
-2024-12-09 00:17:15,429 - WARNING - Thread 1: Respond: False, 126, 3617033963.
-2024-12-09 00:17:15,431 - WARNING - Thread 4: Respond: False, 125, 3617033963.
-2024-12-09 00:17:30,644 - WARNING - Thread 6 closed.
-2024-12-09 00:17:30,810 - WARNING - Thread 7 closed.
-2024-12-09 00:17:31,304 - WARNING - Thread 2 closed.
-2024-12-09 00:17:31,413 - WARNING - Thread 5 closed.
-2024-12-09 00:17:32,117 - WARNING - Thread 8 closed.
-2024-12-09 00:17:32,296 - WARNING - Thread 1 closed.
-2024-12-09 00:17:32,310 - WARNING - Thread 4 closed.
-2024-12-09 00:17:32,310 - WARNING - Thread 3 closed.
-2024-12-09 00:17:32,310 - INFO - Merging files...
-2024-12-09 00:17:33,463 - INFO - Đã gộp file vào File7.zip thành công.
-2024-12-09 00:17:36,565 - WARNING - Client closed.
+2024-12-11 21:36:01,455 - INFO - Data size: 5242880
+2024-12-11 21:36:01,563 - WARNING - Thread 2 closed.
+2024-12-11 21:36:01,570 - WARNING - Thread 1 closed.
+2024-12-11 21:36:01,572 - WARNING - Thread 5 closed.
+2024-12-11 21:36:01,573 - WARNING - Thread 4 closed.
+2024-12-11 21:36:01,573 - WARNING - Thread 6 closed.
+2024-12-11 21:36:01,574 - WARNING - Thread 7 closed.
+2024-12-11 21:36:01,574 - WARNING - Thread 8 closed.
+2024-12-11 21:36:01,574 - WARNING - Thread 3 closed.
+2024-12-11 21:36:01,574 - INFO - Merging files...
+2024-12-11 21:36:01,579 - INFO - Đã gộp file vào File1.zip thành công.
+2024-12-11 21:36:01,580 - INFO - Data size: 10485760
+2024-12-11 21:36:01,805 - WARNING - Thread 1 closed.
+2024-12-11 21:36:01,809 - WARNING - Thread 3 closed.
+2024-12-11 21:36:01,811 - WARNING - Thread 8 closed.
+2024-12-11 21:36:01,814 - WARNING - Thread 2 closed.
+2024-12-11 21:36:01,814 - WARNING - Thread 4 closed.
+2024-12-11 21:36:01,816 - WARNING - Thread 5 closed.
+2024-12-11 21:36:01,816 - WARNING - Thread 6 closed.
+2024-12-11 21:36:01,816 - WARNING - Thread 7 closed.
+2024-12-11 21:36:01,817 - INFO - Merging files...
+2024-12-11 21:36:01,831 - INFO - Đã gộp file vào File2.zip thành công.
+2024-12-11 21:36:01,833 - INFO - Data size: 20971520
+2024-12-11 21:36:02,328 - WARNING - Thread 3 closed.
+2024-12-11 21:36:02,339 - WARNING - Thread 5 closed.
+2024-12-11 21:36:02,345 - WARNING - Thread 4 closed.
+2024-12-11 21:36:02,349 - WARNING - Thread 2 closed.
+2024-12-11 21:36:02,350 - WARNING - Thread 7 closed.
+2024-12-11 21:36:02,353 - WARNING - Thread 1 closed.
+2024-12-11 21:36:02,354 - WARNING - Thread 6 closed.
+2024-12-11 21:36:02,355 - WARNING - Thread 8 closed.
+2024-12-11 21:36:02,355 - INFO - Merging files...
+2024-12-11 21:36:02,381 - INFO - Đã gộp file vào File3.zip thành công.
+2024-12-11 21:36:02,383 - INFO - Data size: 52428800
+2024-12-11 21:36:03,612 - WARNING - Thread 8 closed.
+2024-12-11 21:36:03,614 - WARNING - Thread 7 closed.
+2024-12-11 21:36:03,636 - WARNING - Thread 4 closed.
+2024-12-11 21:36:03,642 - WARNING - Thread 6 closed.
+2024-12-11 21:36:03,645 - WARNING - Thread 3 closed.
+2024-12-11 21:36:03,647 - WARNING - Thread 1 closed.
+2024-12-11 21:36:03,651 - WARNING - Thread 5 closed.
+2024-12-11 21:36:03,652 - WARNING - Thread 2 closed.
+2024-12-11 21:36:03,653 - INFO - Merging files...
+2024-12-11 21:36:03,696 - INFO - Đã gộp file vào File4.zip thành công.
+2024-12-11 21:37:42,910 - INFO - Data size: 104857600
+2024-12-11 21:37:45,686 - WARNING - Thread 1 closed.
+2024-12-11 21:37:45,738 - WARNING - Thread 7 closed.
+2024-12-11 21:37:45,740 - WARNING - Thread 8 closed.
+2024-12-11 21:37:45,745 - WARNING - Thread 5 closed.
+2024-12-11 21:37:45,748 - WARNING - Thread 2 closed.
+2024-12-11 21:37:45,749 - WARNING - Thread 4 closed.
+2024-12-11 21:37:45,752 - WARNING - Thread 3 closed.
+2024-12-11 21:37:45,752 - WARNING - Thread 6 closed.
+2024-12-11 21:37:45,753 - INFO - Merging files...
+2024-12-11 21:37:45,850 - INFO - Đã gộp file vào File5.zip thành công.
+2024-12-11 21:37:45,851 - INFO - Data size: 209715200
+2024-12-11 21:37:50,996 - WARNING - Thread 2 closed.
+2024-12-11 21:37:51,051 - WARNING - Thread 4 closed.
+2024-12-11 21:37:51,069 - WARNING - Thread 3 closed.
+2024-12-11 21:37:51,104 - WARNING - Thread 5 closed.
+2024-12-11 21:37:51,195 - WARNING - Thread 7 closed.
+2024-12-11 21:37:51,202 - WARNING - Thread 1 closed.
+2024-12-11 21:37:51,206 - WARNING - Thread 8 closed.
+2024-12-11 21:37:51,206 - WARNING - Thread 6 closed.
+2024-12-11 21:37:51,206 - INFO - Merging files...
+2024-12-11 21:37:51,798 - INFO - Đã gộp file vào File6.zip thành công.
+2024-12-11 21:37:51,804 - INFO - Data size: 536870912
+2024-12-11 21:38:15,880 - WARNING - Thread 2 closed.
+2024-12-11 21:38:16,089 - WARNING - Thread 1 closed.
+2024-12-11 21:38:16,089 - WARNING - Thread 3 closed.
+2024-12-11 21:38:16,089 - WARNING - Thread 5 closed.
+2024-12-11 21:38:16,115 - WARNING - Thread 4 closed.
+2024-12-11 21:38:16,550 - WARNING - Thread 6 closed.
+2024-12-11 21:38:16,580 - WARNING - Thread 8 closed.
+2024-12-11 21:38:16,584 - WARNING - Thread 7 closed.
+2024-12-11 21:38:16,590 - INFO - Merging files...
+2024-12-11 21:38:18,841 - INFO - Đã gộp file vào File7.zip thành công.
+2024-12-11 21:39:09,055 - WARNING - Client closed.

@@ -3,6 +3,7 @@ SERVER_HOST = '127.0.0.1'
 SERVER_PORT = 50000
 NUM_THREADS = 4  # Number of threads to use for downloading
 CHUNK_SIZE = 512 * 1024  # 512KB chunks
+PACKET_SIZE = 1024  # 1KB packets
 MAX_CLIENTS = 5  # Maximum number of clients to serve
 HEADER_SIZE = 18  # Header size in bytes
 
@@ -54,16 +55,16 @@ class Chunk:
     def to_bytes(self) -> bytes:
         """
         Convert chunk to bytes for sending over network
-        num_id | payload | id | total | length | offset | name |  data
-        1B     | 3B       |4B | 4B    | 4B     | 4B    | xB    |  xB
+        num_id | length | payload | id | total | offset | name |  data
+        1B     | 1B     | 4B       |4B | 4B    | 4B    | xB    |  xB
         """
         return self.header_to_bytes() + self.data_to_bytes()
 
     def header_to_bytes(self) -> bytes:
         """
         Convert chunk to bytes for sending over network
-        num_id | payload | id | total | length | offset | name |  data
-        1B     | 3B       |4B | 4B    | 4B     | 4B    | xB    |  xB
+        num_id | length | payload | id | total | offset | name |  data
+        1B     | 1B     | 4B       |4B | 4B    | 4B    | xB    |  xB
         """
         header = (self.num_id.to_bytes(1, byteorder='big') +
                   self.length_name.to_bytes(1, byteorder='big') +

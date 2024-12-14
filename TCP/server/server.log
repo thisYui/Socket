@@ -1,63 +1,9 @@
-2024-12-10 23:46:24,606 - INFO - Accepted connection from ('127.0.0.1', 60987)
-2024-12-10 23:46:24,809 - INFO - Received request for File7.zip from ('127.0.0.1', 60987)
-2024-12-10 23:46:43,841 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 60987), name File7.zip successfully
-2024-12-10 23:46:43,852 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 60987), name File7.zip successfully
-2024-12-10 23:46:43,864 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 60987), name File7.zip successfully
-2024-12-10 23:46:43,879 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 60987), name File7.zip successfully
-2024-12-10 23:46:43,879 - INFO - Sending File7.zip to ('127.0.0.1', 60987) successfully
-2024-12-10 23:46:46,834 - WARNING - Client ('127.0.0.1', 60987) disconnected.
-2024-12-10 23:46:46,835 - ERROR - Socket closed for ('127.0.0.1', 60987)
-2024-12-10 23:48:51,272 - INFO - Accepted connection from ('127.0.0.1', 61056)
-2024-12-10 23:48:51,475 - INFO - Received request for File1.zip from ('127.0.0.1', 61056)
-2024-12-10 23:48:51,824 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61056), name File1.zip successfully
-2024-12-10 23:48:51,832 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61056), name File1.zip successfully
-2024-12-10 23:48:51,845 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61056), name File1.zip successfully
-2024-12-10 23:48:51,852 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61056), name File1.zip successfully
-2024-12-10 23:48:51,852 - INFO - Sending File1.zip to ('127.0.0.1', 61056) successfully
-2024-12-10 23:48:52,112 - INFO - Received request for File2.zip from ('127.0.0.1', 61056)
-2024-12-10 23:48:52,611 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61056), name File2.zip successfully
-2024-12-10 23:48:52,617 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61056), name File2.zip successfully
-2024-12-10 23:48:52,623 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61056), name File2.zip successfully
-2024-12-10 23:48:52,641 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61056), name File2.zip successfully
-2024-12-10 23:48:52,641 - INFO - Sending File2.zip to ('127.0.0.1', 61056) successfully
-2024-12-10 23:48:52,902 - INFO - Received request for File3.zip from ('127.0.0.1', 61056)
-2024-12-10 23:48:53,712 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61056), name File3.zip successfully
-2024-12-10 23:48:53,722 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61056), name File3.zip successfully
-2024-12-10 23:48:53,732 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61056), name File3.zip successfully
-2024-12-10 23:48:53,751 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61056), name File3.zip successfully
-2024-12-10 23:48:53,751 - INFO - Sending File3.zip to ('127.0.0.1', 61056) successfully
-2024-12-10 23:48:54,023 - INFO - Received request for File4.zip from ('127.0.0.1', 61056)
-2024-12-10 23:48:55,875 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61056), name File4.zip successfully
-2024-12-10 23:48:55,887 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61056), name File4.zip successfully
-2024-12-10 23:48:55,903 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61056), name File4.zip successfully
-2024-12-10 23:48:55,917 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61056), name File4.zip successfully
-2024-12-10 23:48:55,917 - INFO - Sending File4.zip to ('127.0.0.1', 61056) successfully
-2024-12-10 23:49:11,677 - INFO - Received request for File5.zip from ('127.0.0.1', 61056)
-2024-12-10 23:49:16,283 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61056), name File5.zip successfully
-2024-12-10 23:49:16,298 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61056), name File5.zip successfully
-2024-12-10 23:49:16,490 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61056), name File5.zip successfully
-2024-12-10 23:49:16,512 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61056), name File5.zip successfully
-2024-12-10 23:49:16,512 - INFO - Sending File5.zip to ('127.0.0.1', 61056) successfully
-2024-12-10 23:49:16,950 - INFO - Received request for File6.zip from ('127.0.0.1', 61056)
-2024-12-10 23:49:24,572 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61056), name File6.zip successfully
-2024-12-10 23:49:24,596 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61056), name File6.zip successfully
-2024-12-10 23:49:24,607 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61056), name File6.zip successfully
-2024-12-10 23:49:24,623 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61056), name File6.zip successfully
-2024-12-10 23:49:24,623 - INFO - Sending File6.zip to ('127.0.0.1', 61056) successfully
-2024-12-10 23:49:25,191 - INFO - Received request for File7.zip from ('127.0.0.1', 61056)
-2024-12-10 23:49:43,950 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61056), name File7.zip successfully
-2024-12-10 23:49:43,967 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61056), name File7.zip successfully
-2024-12-10 23:49:43,985 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61056), name File7.zip successfully
-2024-12-10 23:49:44,004 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61056), name File7.zip successfully
-2024-12-10 23:49:44,004 - INFO - Sending File7.zip to ('127.0.0.1', 61056) successfully
-2024-12-10 23:49:50,939 - WARNING - Client ('127.0.0.1', 61056) disconnected.
-2024-12-10 23:49:50,939 - ERROR - Socket closed for ('127.0.0.1', 61056)
-2024-12-10 23:50:00,929 - INFO - Accepted connection from ('127.0.0.1', 61060)
-2024-12-10 23:50:00,931 - WARNING - Client ('127.0.0.1', 61060) disconnected.
-2024-12-10 23:50:00,931 - ERROR - Server will be shutdown
-2024-12-10 23:50:00,931 - ERROR - Socket closed for ('127.0.0.1', 61060)
-2024-12-10 23:50:00,931 - INFO - Accepted connection from ('127.0.0.1', 61061)
-2024-12-10 23:50:00,950 - WARNING - Client ('127.0.0.1', 61061) disconnected.
-2024-12-10 23:50:00,950 - ERROR - Server will be shutdown
-2024-12-10 23:50:00,950 - ERROR - Socket closed for ('127.0.0.1', 61061)
-2024-12-10 23:50:00,951 - CRITICAL - Server shutdown
+2024-12-10 23:58:34,437 - INFO - Accepted connection from ('127.0.0.1', 61189)
+2024-12-10 23:58:34,640 - INFO - Received request for File7.zip from ('127.0.0.1', 61189)
+2024-12-10 23:58:53,913 - INFO - Sent chunk ID: 3 to ('127.0.0.1', 61189), name File7.zip successfully
+2024-12-10 23:58:53,928 - INFO - Sent chunk ID: 2 to ('127.0.0.1', 61189), name File7.zip successfully
+2024-12-10 23:58:53,942 - INFO - Sent chunk ID: 4 to ('127.0.0.1', 61189), name File7.zip successfully
+2024-12-10 23:58:53,964 - INFO - Sent chunk ID: 1 to ('127.0.0.1', 61189), name File7.zip successfully
+2024-12-10 23:58:53,964 - INFO - Sending File7.zip to ('127.0.0.1', 61189) successfully
+2024-12-10 23:59:19,736 - WARNING - Client ('127.0.0.1', 61189) disconnected.
+2024-12-10 23:59:19,736 - ERROR - Socket closed for ('127.0.0.1', 61189)

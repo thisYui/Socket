@@ -1,20 +1,84 @@
-2024-12-09 00:17:12,930 - DEBUG - Thread 1: Connection from 127.0.0.1:59051.
-2024-12-09 00:17:12,931 - DEBUG - Thread 2: Connection from 127.0.0.1:59052.
-2024-12-09 00:17:12,931 - DEBUG - Thread 3: Connection from 127.0.0.1:59053.
-2024-12-09 00:17:12,932 - DEBUG - Thread 5: Connection from 127.0.0.1:59055.
-2024-12-09 00:17:12,933 - DEBUG - Thread 4: Connection from 127.0.0.1:59054.
-2024-12-09 00:17:12,933 - DEBUG - Thread 6: Connection from 127.0.0.1:59056.
-2024-12-09 00:17:12,934 - DEBUG - Thread 7: Connection from 127.0.0.1:59057.
-2024-12-09 00:17:12,934 - DEBUG - Thread 8: Connection from 127.0.0.1:59058.
-2024-12-09 00:17:15,414 - INFO - Thread 8: Timeout, resending Chunk: 125, 477954048, 3617033963, 65536
-2024-12-09 00:17:15,414 - INFO - Thread 4: Timeout, resending Chunk: 125, 209518592, 3617033963, 65536
-2024-12-09 00:17:15,414 - INFO - Thread 3: Timeout, resending Chunk: 124, 142344192, 3617033963, 65536
-2024-12-09 00:17:15,414 - INFO - Thread 1: Timeout, resending Chunk: 126, 8257536, 3617033963, 65536
-2024-12-09 00:17:15,429 - INFO - Thread 8: Invalid ACK or checksum, resending chunk 125.
-2024-12-09 00:17:15,429 - INFO - Thread 3: Invalid ACK or checksum, resending chunk 124.
-2024-12-09 00:17:15,430 - INFO - Thread 1: Invalid ACK or checksum, resending chunk 126.
-2024-12-09 00:17:15,431 - INFO - Thread 4: Invalid ACK or checksum, resending chunk 125.
-2024-12-09 00:17:36,565 - WARNING - Connection from :0 closed.
-2024-12-09 00:17:36,566 - WARNING - Rebinding server.
-2024-12-09 00:17:56,769 - ERROR - Server can be closed.
-2024-12-09 00:17:56,769 - CRITICAL - Server closed.
+2024-12-11 21:34:24,518 - DEBUG - Thread 1: Connection from 127.0.0.1:50403.
+2024-12-11 21:34:24,518 - DEBUG - Thread 2: Connection from 127.0.0.1:50404.
+2024-12-11 21:34:24,518 - DEBUG - Thread 3: Connection from 127.0.0.1:50405.
+2024-12-11 21:34:24,518 - DEBUG - Thread 4: Connection from 127.0.0.1:50406.
+2024-12-11 21:34:24,518 - DEBUG - Thread 5: Connection from 127.0.0.1:50407.
+2024-12-11 21:34:24,519 - DEBUG - Thread 6: Connection from 127.0.0.1:50408.
+2024-12-11 21:34:24,519 - DEBUG - Thread 7: Connection from 127.0.0.1:50409.
+2024-12-11 21:34:24,519 - DEBUG - Thread 8: Connection from 127.0.0.1:50410.
+2024-12-11 21:34:24,686 - DEBUG - Thread 1: Connection from 127.0.0.1:50411.
+2024-12-11 21:34:24,686 - DEBUG - Thread 2: Connection from 127.0.0.1:50412.
+2024-12-11 21:34:24,686 - DEBUG - Thread 3: Connection from 127.0.0.1:50413.
+2024-12-11 21:34:24,687 - DEBUG - Thread 4: Connection from 127.0.0.1:50414.
+2024-12-11 21:34:24,687 - DEBUG - Thread 5: Connection from 127.0.0.1:50415.
+2024-12-11 21:34:24,687 - DEBUG - Thread 6: Connection from 127.0.0.1:50416.
+2024-12-11 21:34:24,688 - DEBUG - Thread 7: Connection from 127.0.0.1:50417.
+2024-12-11 21:34:24,688 - DEBUG - Thread 8: Connection from 127.0.0.1:50418.
+2024-12-11 21:34:24,941 - DEBUG - Thread 1: Connection from 127.0.0.1:50419.
+2024-12-11 21:34:24,941 - DEBUG - Thread 2: Connection from 127.0.0.1:50420.
+2024-12-11 21:34:24,941 - DEBUG - Thread 3: Connection from 127.0.0.1:50421.
+2024-12-11 21:34:24,941 - DEBUG - Thread 4: Connection from 127.0.0.1:50422.
+2024-12-11 21:34:24,942 - DEBUG - Thread 5: Connection from 127.0.0.1:50423.
+2024-12-11 21:34:24,942 - DEBUG - Thread 6: Connection from 127.0.0.1:50424.
+2024-12-11 21:34:24,942 - DEBUG - Thread 7: Connection from 127.0.0.1:50425.
+2024-12-11 21:34:24,943 - DEBUG - Thread 8: Connection from 127.0.0.1:50426.
+2024-12-11 21:35:15,140 - WARNING - Connection from :0 closed.
+2024-12-11 21:35:15,140 - WARNING - Rebinding server.
+2024-12-11 21:36:01,457 - DEBUG - Thread 1: Connection from 127.0.0.1:51950.
+2024-12-11 21:36:01,457 - DEBUG - Thread 2: Connection from 127.0.0.1:51951.
+2024-12-11 21:36:01,458 - DEBUG - Thread 3: Connection from 127.0.0.1:51952.
+2024-12-11 21:36:01,458 - DEBUG - Thread 4: Connection from 127.0.0.1:51953.
+2024-12-11 21:36:01,458 - DEBUG - Thread 5: Connection from 127.0.0.1:51954.
+2024-12-11 21:36:01,459 - DEBUG - Thread 6: Connection from 127.0.0.1:51955.
+2024-12-11 21:36:01,459 - DEBUG - Thread 7: Connection from 127.0.0.1:51956.
+2024-12-11 21:36:01,459 - DEBUG - Thread 8: Connection from 127.0.0.1:51957.
+2024-12-11 21:36:01,581 - DEBUG - Thread 1: Connection from 127.0.0.1:51958.
+2024-12-11 21:36:01,581 - DEBUG - Thread 2: Connection from 127.0.0.1:51959.
+2024-12-11 21:36:01,581 - DEBUG - Thread 3: Connection from 127.0.0.1:51960.
+2024-12-11 21:36:01,581 - DEBUG - Thread 4: Connection from 127.0.0.1:51961.
+2024-12-11 21:36:01,581 - DEBUG - Thread 5: Connection from 127.0.0.1:51962.
+2024-12-11 21:36:01,583 - DEBUG - Thread 6: Connection from 127.0.0.1:51963.
+2024-12-11 21:36:01,583 - DEBUG - Thread 7: Connection from 127.0.0.1:51964.
+2024-12-11 21:36:01,583 - DEBUG - Thread 8: Connection from 127.0.0.1:51965.
+2024-12-11 21:36:01,833 - DEBUG - Thread 1: Connection from 127.0.0.1:51966.
+2024-12-11 21:36:01,833 - DEBUG - Thread 2: Connection from 127.0.0.1:51967.
+2024-12-11 21:36:01,833 - DEBUG - Thread 3: Connection from 127.0.0.1:51968.
+2024-12-11 21:36:01,834 - DEBUG - Thread 4: Connection from 127.0.0.1:51969.
+2024-12-11 21:36:01,834 - DEBUG - Thread 5: Connection from 127.0.0.1:51970.
+2024-12-11 21:36:01,834 - DEBUG - Thread 6: Connection from 127.0.0.1:51971.
+2024-12-11 21:36:01,834 - DEBUG - Thread 7: Connection from 127.0.0.1:51972.
+2024-12-11 21:36:01,835 - DEBUG - Thread 8: Connection from 127.0.0.1:51973.
+2024-12-11 21:36:02,384 - DEBUG - Thread 1: Connection from 127.0.0.1:51974.
+2024-12-11 21:36:02,384 - DEBUG - Thread 2: Connection from 127.0.0.1:51975.
+2024-12-11 21:36:02,384 - DEBUG - Thread 3: Connection from 127.0.0.1:51976.
+2024-12-11 21:36:02,385 - DEBUG - Thread 4: Connection from 127.0.0.1:51977.
+2024-12-11 21:36:02,385 - DEBUG - Thread 5: Connection from 127.0.0.1:51978.
+2024-12-11 21:36:02,385 - DEBUG - Thread 6: Connection from 127.0.0.1:51979.
+2024-12-11 21:36:02,385 - DEBUG - Thread 7: Connection from 127.0.0.1:51980.
+2024-12-11 21:36:02,385 - DEBUG - Thread 8: Connection from 127.0.0.1:51981.
+2024-12-11 21:37:42,910 - DEBUG - Thread 1: Connection from 127.0.0.1:51375.
+2024-12-11 21:37:42,911 - DEBUG - Thread 2: Connection from 127.0.0.1:51376.
+2024-12-11 21:37:42,911 - DEBUG - Thread 3: Connection from 127.0.0.1:51377.
+2024-12-11 21:37:42,911 - DEBUG - Thread 4: Connection from 127.0.0.1:51378.
+2024-12-11 21:37:42,911 - DEBUG - Thread 5: Connection from 127.0.0.1:51379.
+2024-12-11 21:37:42,912 - DEBUG - Thread 6: Connection from 127.0.0.1:51380.
+2024-12-11 21:37:42,912 - DEBUG - Thread 7: Connection from 127.0.0.1:51381.
+2024-12-11 21:37:42,912 - DEBUG - Thread 8: Connection from 127.0.0.1:51382.
+2024-12-11 21:37:45,852 - DEBUG - Thread 1: Connection from 127.0.0.1:51383.
+2024-12-11 21:37:45,852 - DEBUG - Thread 2: Connection from 127.0.0.1:51384.
+2024-12-11 21:37:45,852 - DEBUG - Thread 3: Connection from 127.0.0.1:51385.
+2024-12-11 21:37:45,853 - DEBUG - Thread 4: Connection from 127.0.0.1:51386.
+2024-12-11 21:37:45,853 - DEBUG - Thread 5: Connection from 127.0.0.1:51387.
+2024-12-11 21:37:45,853 - DEBUG - Thread 6: Connection from 127.0.0.1:51388.
+2024-12-11 21:37:45,853 - DEBUG - Thread 7: Connection from 127.0.0.1:51389.
+2024-12-11 21:37:45,853 - DEBUG - Thread 8: Connection from 127.0.0.1:51390.
+2024-12-11 21:37:51,806 - DEBUG - Thread 1: Connection from 127.0.0.1:63099.
+2024-12-11 21:37:51,806 - DEBUG - Thread 2: Connection from 127.0.0.1:63100.
+2024-12-11 21:37:51,807 - DEBUG - Thread 3: Connection from 127.0.0.1:63101.
+2024-12-11 21:37:51,807 - DEBUG - Thread 4: Connection from 127.0.0.1:63102.
+2024-12-11 21:37:51,808 - DEBUG - Thread 5: Connection from 127.0.0.1:63103.
+2024-12-11 21:37:51,808 - DEBUG - Thread 6: Connection from 127.0.0.1:63104.
+2024-12-11 21:37:51,810 - DEBUG - Thread 7: Connection from 127.0.0.1:63105.
+2024-12-11 21:37:51,811 - DEBUG - Thread 8: Connection from 127.0.0.1:63106.
+2024-12-11 21:39:09,055 - WARNING - Connection from :0 closed.
+2024-12-11 21:39:09,056 - WARNING - Rebinding server.

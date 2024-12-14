@@ -4,7 +4,7 @@ import os
 import json
 import logging
 import time
-from modul import SERVER_HOST, SERVER_PORT, CHUNK_SIZE, FILE_PATH, MAX_CLIENTS, NUM_THREADS, Chunk
+from modul import SERVER_HOST, SERVER_PORT, CHUNK_SIZE, FILE_PATH, MAX_CLIENTS, NUM_THREADS, Chunk, PACKET_SIZE
 
 
 # Cấu hình log cho server
@@ -137,7 +137,7 @@ class Connection(threading.Thread):
         """  Nhận yêu cầu từ client """
         while True:
             try:
-                self.request = self.client_socket.recv(1024)  # Nhận yêu cầu từ client
+                self.request = self.client_socket.recv(PACKET_SIZE)  # Nhận yêu cầu từ client
 
                 # Tính hiệu ngắt kết nối
                 if self.request == b'exit' or self.request == b'shutdown':

@@ -35,7 +35,6 @@ class SendThread(threading.Thread):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # Tạo socket
         self.received = Respond()  # file nhận được từ client
         self.size_chunk = CHUNK_SIZE  # Kích thước mỗi chunk: 64KB
-        self.size_packet = PACKET_SIZE  # Kích thước mỗi packet
         self.delay = 0.005  # Độ trễ
 
         """ Bind socket """
@@ -47,7 +46,6 @@ class SendThread(threading.Thread):
     # Hàm đóng kết nối
     def close(self):
         self.socket.close()
-        self.socket = None
 
     # Hàm đọc file
     def read_file(self) -> bytes:
@@ -78,7 +76,7 @@ class SendThread(threading.Thread):
 
         while sent_bytes < total_size:
             try:
-                packet = self.chunk.to_bytes[sent_bytes:sent_bytes + self.size_packet]  # Tách dữ liệu thành từng chunk
+                packet = self.chunk.to_bytes[sent_bytes:sent_bytes + PACKET_SIZE]  # Tách dữ liệu thành từng chunk
                 self.socket.sendto(packet, (self.client_ip, self.client_port))  # Gửi chunk tới client
                 sent_bytes += len(packet)  # Cập nhật số byte đã gửi
             except BrokenPipeError as e:
@@ -89,7 +87,7 @@ class SendThread(threading.Thread):
 
     def run(self):
         # Nhận địa chỉ IP và cổng của client
-        _, (self.client_ip, self.client_port) = self.socket.recvfrom(self.size_packet)
+        _, (self.client_ip, self.client_port) = self.socket.recvfrom(PACKET_SIZE)
         logging.debug(f"Thread {self.thread_id}: Connection from {self.client_ip}:{self.client_port}.")
 
         self.socket.settimeout(self.time_out)  # Thiết lập thời gian chờ
@@ -103,7 +101,7 @@ class SendThread(threading.Thread):
                     self.send_data()  # Gửi dữ liệu
 
                 # Chờ phản hồi từ client
-                data, _ = self.socket.recvfrom(self.size_packet)  # Nhận dữ liệu từ client
+                data, _ = self.socket.recvfrom(PACKET_SIZE)  # Nhận dữ liệu từ client
                 self.received.decompose(data)  # Phân tách dữ liệu nhận được
 
                 # Kiểm tra checksum và ACK
@@ -121,6 +119,7 @@ class SendThread(threading.Thread):
             time.sleep(self.delay)  # Độ trễ (0.001s) cho mỗi gói
 
         self.socket.sendto(b"exit", (self.client_ip, self.client_port))  # Gửi tín hiệu kết thúc
+        logging.info(f"Thread {self.thread_id}: File sent successfully. File name: {self.file_path}.")
         self.close()  # Đóng kết nối
 
 

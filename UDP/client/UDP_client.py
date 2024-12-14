@@ -3,7 +3,7 @@ import json
 import os
 import threading
 import logging
-from modul import Respond, NUM_THREADS, SERVER_HOST, SERVER_PORT, CHUNK_SIZE, PACKET_SIZE
+from modul import Respond, NUM_THREADS, SERVER_HOST, SERVER_PORT, PACKET_SIZE
 
 # Cấu hình logger cho client
 logging.basicConfig(
@@ -27,7 +27,6 @@ class ReceiveThread(threading.Thread):
         self.thread_id = thread_id  # ID của thread
         self.time_out = 1  # Thời gian chờ: 1s
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.size_packet = PACKET_SIZE  # Kích thước mỗi packet
         self.response = Respond()  # Respond từ client
 
     def close(self):
@@ -49,7 +48,7 @@ class ReceiveThread(threading.Thread):
             data = b''  # Đọc file vào data khi đã nhận toàn bộ chunk và ghi vào file
             while True:
                 try:
-                    packet, _ = self.client_socket.recvfrom(self.size_packet)
+                    packet, _ = self.client_socket.recvfrom(PACKET_SIZE)
 
                     if packet == b'END':  # Nhận tín hiệu kết thúc
                         logging.debug(f"Thread {self.thread_id}: Received END signal.")
@@ -98,7 +97,7 @@ class Client:
         self.client_socket.sendto(b'Get_file_list', (self.server_host, self.server_port))
 
         try:
-            data, _ = self.client_socket.recvfrom(1024)  # Nhận dữ liệu từ server
+            data, _ = self.client_socket.recvfrom(PACKET_SIZE)  # Nhận dữ liệu từ server
             data = json.loads(data.decode())  # Giải mã dữ liệu JSON
 
             # Kiểm tra nếu dữ liệu có trường 'files'
@@ -172,6 +171,7 @@ class Client:
         Lọc ra các file đã tải thành công.
         """
         lst_files = self.read_file()
+        print(lst_files)
         for i in lst_files:
             if i not in self.files_downloaded:
                 self.files.append(i)  # Thêm file vào danh sách cần tải
@@ -189,9 +189,10 @@ class Client:
         self.files = self.read_file()  # Đọc file
         while True:
             if not self.files:
-                print('''\nNo files to download. If there are no further requests please press enter to exit.
-                      If so, delete the previous requests and add the new ones. After that, input 'more' and Enter.\n
-                      Do you want to continue? (Press Enter to exit, type 'more' to continue): ''')
+                print(self.files_downloaded)
+                print(f"\nNo files to download. If there are no further requests please press enter to exit."
+                      f"If so, delete the previous requests and add the new ones. After that, input 'more' and Enter.\n"
+                      f"Do you want to continue? (Press Enter to exit, type 'more' to continue): \n > ", end='')
 
                 if input().lower() == 'more':
                     self.filter_files()  # Đọc file và lọc ra các file đã tải thành công
@@ -206,7 +207,7 @@ class Client:
             print(f"Requesting file: {self.file_current}")
             self.client_socket.sendto(self.file_current.encode('utf-8'), (self.server_host, self.server_port))
 
-            data, _ = self.client_socket.recvfrom(1024)  # Nhận kích thước dữ liệu của file
+            data, _ = self.client_socket.recvfrom(PACKET_SIZE)  # Nhận kích thước dữ liệu của file
             data_size_file_current = int(data.decode())  # Chuyển dữ liệu từ bytes sang int
             logging.info(f"Data size: {data_size_file_current}")  # In kích thước dữ liệu
 

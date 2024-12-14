@@ -37,7 +37,15 @@ def compare_files(file1, file2):
         return False
 
 
-type_protocol = "UDP"
+""" 
+Nếu test chương trình trên loopback thì run chương tình
+Nếu test trên 2 máy thì chạy trên máy client
+có thể gửi file 2 lần rồi kiểm tra 2 file này
+hoặc có thể sử dụng một ứng dụng khác để gửi file qua cho client và client sẽ kiểm tra
+"""
+
+'''Chọn loại giao thức'''
+type_protocol = "TCP"
 lst_files = read_file(f"{type_protocol}/client/input.txt")
 for i in lst_files:
     print(f"File name: {i}")

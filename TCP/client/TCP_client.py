@@ -5,7 +5,7 @@ import time
 import os
 from threading import Lock
 import logging
-from modul import SERVER_HOST, SERVER_PORT, Chunk, NUM_THREADS, HEADER_SIZE
+from modul import SERVER_HOST, SERVER_PORT, Chunk, NUM_THREADS, HEADER_SIZE, PACKET_SIZE
 
 # Cấu hình logger cho client
 logging.basicConfig(
@@ -34,7 +34,7 @@ class MiniThread(threading.Thread):
         self._shared_data = _shared_data  # Dữ liệu chia sẻ giữa các thread
         self.delay = 0.005  # Độ trễ
 
-    def receive_chunk(self, header_size=HEADER_SIZE, buffer_size=1024) -> bytes:
+    def receive_chunk(self, header_size=HEADER_SIZE, buffer_size=PACKET_SIZE) -> bytes:
         """Receive all data from the server in chunks using the walrus operator."""
         with self._lock_receive:
             try:
@@ -118,7 +118,6 @@ class Client:
         self.time_waiting = 5  # Thời gian chờ
         self.json_file = {}  # File JSON
         self.is_live = True  # Trạng thái sống
-        self.packet_size = 1024  # Kích thước gói tin
         self.delay = 0.2  # Độ trễ
         self._lock_receive = threading.Lock()  # Lock để tránh xung đột giữa các thread
         self._lock_write = threading.Lock()  # Lock để tránh xung đột giữa các thread
@@ -146,7 +145,7 @@ class Client:
             exit(1)  # Thoát chương trình nếu không kết nối được
 
     def get_json_file(self):
-        data = self.client_socket.recv(self.packet_size)  # Nhận file JSON từ server
+        data = self.client_socket.recv(PACKET_SIZE)  # Nhận file JSON từ server
         data = data.decode()  # Chuyển đổi dữ liệu nhận được thành chuỗi
 
         # Chuyển đổi chuỗi JSON thành dictionary
@@ -274,7 +273,7 @@ class Client:
             self.send_request()  # Gửi yêu cầu download file
 
             try:
-                data_size = self.client_socket.recv(self.packet_size)  # Nhận kích thước dữ liệu
+                data_size = self.client_socket.recv(PACKET_SIZE)  # Nhận kích thước dữ liệu
                 data_size = int(data_size.decode('utf-8'))  # Chuyển đổi kích thước dữ liệu thành số nguyên
                 logging.info(f"Received data size: {data_size}")
                 print(f"Received data size: {data_size}")

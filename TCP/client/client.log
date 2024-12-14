@@ -1,115 +1,37 @@
-2024-12-10 23:48:51,272 - INFO - Connected to server at 127.0.0.1:50000
-2024-12-10 23:48:51,273 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip']
-2024-12-10 23:48:51,273 - INFO - Files : ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip']
-2024-12-10 23:48:51,475 - INFO - Sent request for File1.zip from 127.0.0.1:50000
-2024-12-10 23:48:51,476 - INFO - Received data size: 5242880
-2024-12-10 23:48:51,872 - INFO - Thread 1 successfully received all chunks in File1.zip.
-2024-12-10 23:48:51,879 - INFO - Thread 3 successfully received all chunks in File1.zip.
-2024-12-10 23:48:51,886 - INFO - Thread 2 successfully received all chunks in File1.zip.
-2024-12-10 23:48:51,893 - INFO - Thread 4 successfully received all chunks in File1.zip.
-2024-12-10 23:48:51,907 - INFO - Đã xóa file 1.bin.
-2024-12-10 23:48:51,907 - INFO - Đã xóa file 2.bin.
-2024-12-10 23:48:51,908 - INFO - Đã xóa file 3.bin.
-2024-12-10 23:48:51,909 - INFO - Đã xóa file 4.bin.
-2024-12-10 23:48:51,909 - INFO - Đã gộp file vào File1.zip thành công.
-2024-12-10 23:48:51,909 - INFO - {'thread_1': {'count_chunk': 3, 'total': 3, 'successfully': True}, 'thread_2': {'count_chunk': 3, 'total': 3, 'successfully': True}, 'thread_3': {'count_chunk': 3, 'total': 3, 'successfully': True}, 'thread_4': {'count_chunk': 3, 'total': 3, 'successfully': True}}
-2024-12-10 23:48:52,111 - INFO - Sent request for File2.zip from 127.0.0.1:50000
-2024-12-10 23:48:52,112 - INFO - Received data size: 10485760
-2024-12-10 23:48:52,644 - INFO - Thread 1 successfully received all chunks in File2.zip.
-2024-12-10 23:48:52,649 - INFO - Thread 2 successfully received all chunks in File2.zip.
-2024-12-10 23:48:52,673 - INFO - Thread 3 successfully received all chunks in File2.zip.
-2024-12-10 23:48:52,679 - INFO - Thread 4 successfully received all chunks in File2.zip.
-2024-12-10 23:48:52,697 - INFO - Đã xóa file 1.bin.
-2024-12-10 23:48:52,698 - INFO - Đã xóa file 2.bin.
-2024-12-10 23:48:52,700 - INFO - Đã xóa file 3.bin.
-2024-12-10 23:48:52,700 - INFO - Đã xóa file 4.bin.
-2024-12-10 23:48:52,701 - INFO - Đã gộp file vào File2.zip thành công.
-2024-12-10 23:48:52,701 - INFO - {'thread_1': {'count_chunk': 5, 'total': 5, 'successfully': True}, 'thread_2': {'count_chunk': 5, 'total': 5, 'successfully': True}, 'thread_3': {'count_chunk': 5, 'total': 5, 'successfully': True}, 'thread_4': {'count_chunk': 5, 'total': 5, 'successfully': True}}
-2024-12-10 23:48:52,902 - INFO - Sent request for File3.zip from 127.0.0.1:50000
-2024-12-10 23:48:52,904 - INFO - Received data size: 20971520
-2024-12-10 23:48:53,771 - INFO - Thread 2 successfully received all chunks in File3.zip.
-2024-12-10 23:48:53,777 - INFO - Thread 1 successfully received all chunks in File3.zip.
-2024-12-10 23:48:53,783 - INFO - Thread 3 successfully received all chunks in File3.zip.
-2024-12-10 23:48:53,790 - INFO - Thread 4 successfully received all chunks in File3.zip.
-2024-12-10 23:48:53,820 - INFO - Đã xóa file 1.bin.
-2024-12-10 23:48:53,821 - INFO - Đã xóa file 2.bin.
-2024-12-10 23:48:53,821 - INFO - Đã xóa file 3.bin.
-2024-12-10 23:48:53,821 - INFO - Đã xóa file 4.bin.
-2024-12-10 23:48:53,821 - INFO - Đã gộp file vào File3.zip thành công.
-2024-12-10 23:48:53,821 - INFO - {'thread_1': {'count_chunk': 10, 'total': 10, 'successfully': True}, 'thread_2': {'count_chunk': 10, 'total': 10, 'successfully': True}, 'thread_3': {'count_chunk': 10, 'total': 10, 'successfully': True}, 'thread_4': {'count_chunk': 10, 'total': 10, 'successfully': True}}
-2024-12-10 23:48:54,023 - INFO - Sent request for File4.zip from 127.0.0.1:50000
-2024-12-10 23:48:54,025 - INFO - Received data size: 52428800
-2024-12-10 23:48:55,909 - INFO - Thread 1 successfully received all chunks in File4.zip.
-2024-12-10 23:48:55,930 - INFO - Thread 2 successfully received all chunks in File4.zip.
-2024-12-10 23:48:55,936 - INFO - Thread 3 successfully received all chunks in File4.zip.
-2024-12-10 23:48:55,953 - INFO - Thread 4 successfully received all chunks in File4.zip.
-2024-12-10 23:48:56,001 - INFO - Đã xóa file 1.bin.
-2024-12-10 23:48:56,003 - INFO - Đã xóa file 2.bin.
-2024-12-10 23:48:56,004 - INFO - Đã xóa file 3.bin.
-2024-12-10 23:48:56,004 - INFO - Đã xóa file 4.bin.
-2024-12-10 23:48:56,004 - INFO - Đã gộp file vào File4.zip thành công.
-2024-12-10 23:48:56,004 - INFO - {'thread_1': {'count_chunk': 25, 'total': 25, 'successfully': True}, 'thread_2': {'count_chunk': 25, 'total': 25, 'successfully': True}, 'thread_3': {'count_chunk': 25, 'total': 25, 'successfully': True}, 'thread_4': {'count_chunk': 25, 'total': 25, 'successfully': True}}
-2024-12-10 23:48:56,331 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip']
-2024-12-10 23:48:56,331 - INFO - Files : []
-2024-12-10 23:49:01,382 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip']
-2024-12-10 23:49:01,382 - INFO - Files : []
-2024-12-10 23:49:06,419 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip']
-2024-12-10 23:49:06,419 - INFO - Files : []
-2024-12-10 23:49:11,476 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:11,476 - INFO - Files : ['File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:11,679 - INFO - Sent request for File5.zip from 127.0.0.1:50000
-2024-12-10 23:49:11,679 - INFO - Received data size: 104857600
-2024-12-10 23:49:11,923 - ERROR - ZeroDivisionError: division by zero
-2024-12-10 23:49:16,354 - INFO - Thread 1 successfully received all chunks in File5.zip.
-2024-12-10 23:49:16,391 - INFO - Thread 2 successfully received all chunks in File5.zip.
-2024-12-10 23:49:16,482 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:16,482 - INFO - Files : ['File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:16,563 - INFO - Thread 3 successfully received all chunks in File5.zip.
-2024-12-10 23:49:16,569 - INFO - Thread 4 successfully received all chunks in File5.zip.
-2024-12-10 23:49:16,741 - INFO - Đã xóa file 1.bin.
-2024-12-10 23:49:16,743 - INFO - Đã xóa file 2.bin.
-2024-12-10 23:49:16,746 - INFO - Đã xóa file 3.bin.
-2024-12-10 23:49:16,749 - INFO - Đã xóa file 4.bin.
-2024-12-10 23:49:16,749 - INFO - Đã gộp file vào File5.zip thành công.
-2024-12-10 23:49:16,749 - INFO - {'thread_1': {'count_chunk': 50, 'total': 50, 'successfully': True}, 'thread_2': {'count_chunk': 50, 'total': 50, 'successfully': True}, 'thread_3': {'count_chunk': 50, 'total': 50, 'successfully': True}, 'thread_4': {'count_chunk': 50, 'total': 50, 'successfully': True}}
-2024-12-10 23:49:16,950 - INFO - Sent request for File6.zip from 127.0.0.1:50000
-2024-12-10 23:49:16,951 - INFO - Received data size: 209715200
-2024-12-10 23:49:17,188 - ERROR - ZeroDivisionError: division by zero
-2024-12-10 23:49:21,487 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:21,487 - INFO - Files : ['File6.zip', 'File7.zip']
-2024-12-10 23:49:24,650 - INFO - Thread 1 successfully received all chunks in File6.zip.
-2024-12-10 23:49:24,656 - INFO - Thread 4 successfully received all chunks in File6.zip.
-2024-12-10 23:49:24,663 - INFO - Thread 2 successfully received all chunks in File6.zip.
-2024-12-10 23:49:24,669 - INFO - Thread 3 successfully received all chunks in File6.zip.
-2024-12-10 23:49:24,972 - INFO - Đã xóa file 1.bin.
-2024-12-10 23:49:24,979 - INFO - Đã xóa file 2.bin.
-2024-12-10 23:49:24,984 - INFO - Đã xóa file 3.bin.
-2024-12-10 23:49:24,989 - INFO - Đã xóa file 4.bin.
-2024-12-10 23:49:24,989 - INFO - Đã gộp file vào File6.zip thành công.
-2024-12-10 23:49:24,990 - INFO - {'thread_1': {'count_chunk': 100, 'total': 100, 'successfully': True}, 'thread_2': {'count_chunk': 100, 'total': 100, 'successfully': True}, 'thread_3': {'count_chunk': 100, 'total': 100, 'successfully': True}, 'thread_4': {'count_chunk': 100, 'total': 100, 'successfully': True}}
-2024-12-10 23:49:25,191 - INFO - Sent request for File7.zip from 127.0.0.1:50000
-2024-12-10 23:49:25,192 - INFO - Received data size: 536870912
-2024-12-10 23:49:26,494 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:26,496 - INFO - Files : ['File7.zip']
-2024-12-10 23:49:31,504 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:31,505 - INFO - Files : ['File7.zip']
-2024-12-10 23:49:36,509 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:36,509 - INFO - Files : ['File7.zip']
-2024-12-10 23:49:41,513 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:41,513 - INFO - Files : ['File7.zip']
-2024-12-10 23:49:44,042 - INFO - Thread 1 successfully received all chunks in File7.zip.
-2024-12-10 23:49:44,048 - INFO - Thread 3 successfully received all chunks in File7.zip.
-2024-12-10 23:49:44,054 - INFO - Thread 2 successfully received all chunks in File7.zip.
-2024-12-10 23:49:44,061 - INFO - Thread 4 successfully received all chunks in File7.zip.
-2024-12-10 23:49:45,118 - INFO - Đã xóa file 1.bin.
-2024-12-10 23:49:45,132 - INFO - Đã xóa file 2.bin.
-2024-12-10 23:49:45,145 - INFO - Đã xóa file 3.bin.
-2024-12-10 23:49:45,161 - INFO - Đã xóa file 4.bin.
-2024-12-10 23:49:45,161 - INFO - Đã gộp file vào File7.zip thành công.
-2024-12-10 23:49:45,161 - INFO - {'thread_1': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_2': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_3': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_4': {'count_chunk': 256, 'total': 256, 'successfully': True}}
-2024-12-10 23:49:46,634 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:46,649 - INFO - Files : []
-2024-12-10 23:49:50,935 - ERROR - Ctrl + C detected! Stopping client...
-2024-12-10 23:49:50,937 - ERROR - Socket closed for 127.0.0.1:50000
-2024-12-10 23:49:51,650 - INFO - Scan files: ['File1.zip', 'File2.zip', 'File3.zip', 'File4.zip', 'File5.zip', 'File6.zip', 'File7.zip']
-2024-12-10 23:49:51,650 - INFO - Files : []
+2024-12-10 23:58:34,437 - INFO - Connected to server at 127.0.0.1:50000
+2024-12-10 23:58:34,439 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:58:34,439 - INFO - Files : ['File7.zip']
+2024-12-10 23:58:34,640 - INFO - Sent request for File7.zip from 127.0.0.1:50000
+2024-12-10 23:58:34,641 - INFO - Received data size: 536870912
+2024-12-10 23:58:39,446 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:58:39,447 - INFO - Files : ['File7.zip']
+2024-12-10 23:58:44,448 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:58:44,448 - INFO - Files : ['File7.zip']
+2024-12-10 23:58:49,450 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:58:49,450 - INFO - Files : ['File7.zip']
+2024-12-10 23:58:53,957 - INFO - Thread 3 successfully received all chunks in File7.zip.
+2024-12-10 23:58:53,978 - INFO - Thread 2 successfully received all chunks in File7.zip.
+2024-12-10 23:58:53,999 - INFO - Thread 4 successfully received all chunks in File7.zip.
+2024-12-10 23:58:54,005 - INFO - Thread 1 successfully received all chunks in File7.zip.
+2024-12-10 23:58:54,450 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:58:54,450 - INFO - Files : ['File7.zip']
+2024-12-10 23:58:54,927 - INFO - Đã xóa file 1.bin.
+2024-12-10 23:58:54,939 - INFO - Đã xóa file 2.bin.
+2024-12-10 23:58:54,952 - INFO - Đã xóa file 3.bin.
+2024-12-10 23:58:54,966 - INFO - Đã xóa file 4.bin.
+2024-12-10 23:58:54,966 - INFO - Đã gộp file vào File7.zip thành công.
+2024-12-10 23:58:54,966 - INFO - {'thread_1': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_2': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_3': {'count_chunk': 256, 'total': 256, 'successfully': True}, 'thread_4': {'count_chunk': 256, 'total': 256, 'successfully': True}}
+2024-12-10 23:58:59,557 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:58:59,573 - INFO - Files : []
+2024-12-10 23:59:04,672 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:59:04,672 - INFO - Files : []
+2024-12-10 23:59:09,727 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:59:09,727 - INFO - Files : []
+2024-12-10 23:59:14,787 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:59:14,787 - INFO - Files : []
+2024-12-10 23:59:19,736 - ERROR - Ctrl + C detected! Stopping client...
+2024-12-10 23:59:19,736 - ERROR - Socket closed for 127.0.0.1:50000
+2024-12-10 23:59:19,788 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:59:19,788 - INFO - Files : []
+2024-12-10 23:59:24,789 - INFO - Scan files: ['File7.zip']
+2024-12-10 23:59:24,789 - INFO - Files : []
