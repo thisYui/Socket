@@ -238,11 +238,7 @@ class Server:
             # Kiểm tra sự tồn tại của file
             if not self.is_exist_file():
                 self.files_send = ''  # Đặt lại tên file
-                continue
-
-            # Kích thước file
-            if not os.path.exists(self.files_send):
-                logging.warning(f"File {self.files_send} not found.")
+                self.server_socket.sendto(b'-1', (self.client_ip, self.client_port))
                 continue
 
             data_size = os.path.getsize(self.files_send)  # Kích thước file

@@ -118,7 +118,7 @@ class Client:
         self.time_waiting = 5  # Thời gian chờ
         self.json_file = {}  # File JSON
         self.is_live = True  # Trạng thái sống
-        self.delay = 0.2  # Độ trễ
+        self.delay = 0.5  # Độ trễ
         self._lock_receive = threading.Lock()  # Lock để tránh xung đột giữa các thread
         self._lock_write = threading.Lock()  # Lock để tránh xung đột giữa các thread
         self._shared_data = {}  # Dữ liệu chia sẻ giữa các thread
@@ -299,8 +299,8 @@ class Client:
 
             # Kiểm tra xem file đã được download đủ kích thước chưa
             if self.check_size_file(data_size) is True:
+                print(f"{self.file_download_current} downloaded successfully.\n")
                 self.reset()  # Đặt lại các giá trị
-            print(f"{self.file_download_current} downloaded successfully.\n")
 
         logging.error(f"Socket closed for {self.host}:{self.port}")
         print(f"Socket closed for {self.host}:{self.port}")

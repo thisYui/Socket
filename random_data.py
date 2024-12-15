@@ -91,7 +91,7 @@ def convert_to_mb(size_list):
 
 
 ''' Chọn loại giao thức '''
-type_protocol = "UDP"
+type_protocol = "TCP"
 json_file_path = f"{type_protocol}/server/data_name.JSON"  # Đường dẫn tới file JSON
 name_list, size_list = extract_names_and_sizes(json_file_path)
 size_list = convert_to_mb(size_list)  # Chuyển kích thước sang MB

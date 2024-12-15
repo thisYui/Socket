@@ -189,7 +189,6 @@ class Client:
         self.files = self.read_file()  # Đọc file
         while True:
             if not self.files:
-                print(self.files_downloaded)
                 print(f"\nNo files to download. If there are no further requests please press enter to exit."
                       f"If so, delete the previous requests and add the new ones. After that, input 'more' and Enter.\n"
                       f"Do you want to continue? (Press Enter to exit, type 'more' to continue): \n > ", end='')
@@ -210,6 +209,11 @@ class Client:
             data, _ = self.client_socket.recvfrom(PACKET_SIZE)  # Nhận kích thước dữ liệu của file
             data_size_file_current = int(data.decode())  # Chuyển dữ liệu từ bytes sang int
             logging.info(f"Data size: {data_size_file_current}")  # In kích thước dữ liệu
+
+            if data_size_file_current < 0:
+                print(f"File {self.file_current} not found.")
+                self.file_current = ""  # Đặt file_current thành rỗng để kiểm tra file tiếp theo
+                continue
 
             '''
             Các port của các thread bên phía server cách đều nhau 1 đơn vị
