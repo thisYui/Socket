@@ -2,7 +2,7 @@
 Dự án này thuộc vào học phần Mạng máy tính của trường Đại học Khoa học Tự nhiên,  ĐHQG-TPHCM.
 
 ## Description
-- Đây là một dự án sử dụng socket đẻ giao tiếp giữa client và server.
+- Đây là một dự án sử dụng socket để giao tiếp giữa client và server.
 - Có thể thực hiện trao đổi dữ liệu giữa client và server bằng 2 giao thức TCP/UDP.
 - Dụ án này là dự án cá nhân được thực hiện bởi Nguyễn Quang Duy, sinh viên khóa 2023 thuộc Trường Đại học Khoa học Tự nhiên, ĐHQG-TPHCM.
 
