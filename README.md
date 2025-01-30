@@ -1,4 +1,4 @@
-# MyProject - zstd 
+# MyProject - Socket
 Dự án này thuộc vào học phần Mạng máy tính của trường Đại học Khoa học Tự nhiên,  ĐHQG-TPHCM.
 
 ## Description
